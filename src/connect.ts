@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync } from 'fs';
 import path from 'path';
-import { setInstance } from './instance';
+import { RiftInstance, setInstance } from './instance';
 
 export interface ConnectParams {
   dbname: string;
@@ -20,13 +20,17 @@ export const connect = ({
   logging,
   password,
   username,
-}: ConnectParams) => {
+}: RiftInstance) => {
   const dbDirPath = path.join(dbpath, dbname);
   console.log(__dirname, dbDirPath);
   if (local) {
     if (!existsSync(dbDirPath)) {
       mkdirSync(dbDirPath, { recursive: true });
     }
+    // TODO: if db exist, check username and password. throw error if it is not correct.
+    // if not exists, create it with given username and password
+    // if server exist at given localhost:port, connect to server
+    // else create server at localhost with given port or default 4224
   } else {
     // if host not provided, give error
     // TODO: check authenticating using host url, username, password

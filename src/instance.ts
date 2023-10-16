@@ -7,8 +7,13 @@ export const setInstance = (value: ConnectParams) => {
   return instance;
 };
 
-class schema {}
 
-class model {}
-
-class RiftInstance {}
+export class RiftInstance {
+  dbname!: string;
+  dbpath?: string;
+  host?: string;
+  local?: boolean;
+  logging?: boolean;
+  password!: string;
+  username!: string;
+}
