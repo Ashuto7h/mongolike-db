@@ -1,0 +1,34 @@
+{
+  "name": "riftdb",
+  "version": "1.0.0",
+  "description": "A noSQL database written completely in js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://@github.com/Ashuto7h/mongolike-db.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "riftdb",
+    "nosql",
+    "jsondb",
+    "db"
+  ],
+  "author": "Ashuto7h",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Ashuto7h/mongolike-db/issues"
+  },
+  "homepage": "https://github.com/Ashuto7h/mongolike-db#readme",
+  "dependencies": {
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "prettier": "^2.8.4"
+  }
+}
