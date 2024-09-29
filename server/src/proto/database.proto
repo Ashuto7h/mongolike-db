@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package database;
+
+import "google/protobuf/timestamp.proto";
+
+service DatabaseService{
+    rpc Create (CreateRequest) returns (CreateResponse) {}
+}
+
+message CreateRequest {
+    string name = 1;
+}   
+
+message CreateResponse {
+    string name = 1;
+}
+
+message DatabaseMetadata{
+    string name = 1;
+    google.protobuf.Timestamp createdAt = 2;
+}
