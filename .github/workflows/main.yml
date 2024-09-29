@@ -7,9 +7,17 @@ jobs:
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: run lint on server
-        run: |
-          cd server
-          pnpm run lint
+      - name: Use Node.js 18.20.4
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.20.4
+          cache: 'pnpm'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - run: cd server
+      - name: Install dependencies
+        run: pnpm install
       
   
