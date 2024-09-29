@@ -1,0 +1,33 @@
+name: lint and build
+on: [push]
+jobs:
+  server:
+    name: Checks server
+    runs-on: ubuntu-22.04
+    steps: 
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - name: Install Node.js 18.20.4
+        uses: actions/setup-node@v4
+        with:
+          cache-dependency-path: ./server/pnpm-lock.yaml
+          node-version: 18.20.4
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: |
+          cd server
+          pnpm install
+      - name: Run lint on server
+        run: |
+          cd server
+          pnpm run lint
+      - name: Run build on server
+        run: |
+          cd server
+          pnpm run build
+      
+  
