@@ -12,10 +12,10 @@ jobs:
         uses: pnpm/action-setup@v4
         with:
           version: 9
-      - name: Use Node.js 18.20.4
+      - name: Install Node.js 18.20.4
         uses: actions/setup-node@v4
         with:
-          cache-dependency-path: server/pnpm-lock.yaml
+          cache-dependency-path: ./server/pnpm-lock.yaml
           node-version: 18.20.4
           cache: 'pnpm'
       - name: Install dependencies
