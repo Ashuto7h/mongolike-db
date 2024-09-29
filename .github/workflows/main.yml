@@ -1,8 +1,8 @@
 name: lint and build
 on: [push]
 jobs:
-  lint:
-    name: checks lint
+  server:
+    name: Checks server
     runs-on: ubuntu-22.04
     steps: 
       - name: Check out repository code
