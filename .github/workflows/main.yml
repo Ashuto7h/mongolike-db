@@ -1,0 +1,14 @@
+on: 
+  pull_request:
+    branches: .*
+jobs:
+  check:
+    name: checks lint and build
+    runs-on: ubuntu-22.04
+    steps: 
+      - name: run lint 
+        run: |
+          cd server
+          pnpm run lint
+      
+  
