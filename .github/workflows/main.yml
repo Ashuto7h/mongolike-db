@@ -21,5 +21,13 @@ jobs:
         run: |
           cd server
           pnpm install
+      - name: Run lint on server
+        run: |
+          cd server
+          pnpm run lint
+      - name: Run build on server
+        run: |
+          cd server
+          pnpm run build
       
   
