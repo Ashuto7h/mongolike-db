@@ -7,6 +7,7 @@ jobs:
     steps: 
       - name: Check out repository code
         uses: actions/checkout@v4
+      - run: cd server
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -16,7 +17,6 @@ jobs:
         with:
           node-version: 18.20.4
           cache: 'pnpm'
-      - run: cd server
       - name: Install dependencies
         run: pnpm install
       
