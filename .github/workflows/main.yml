@@ -1,12 +1,13 @@
-on: 
-  pull_request:
-    branches: .*
+name: lint and build
+on: [push]
 jobs:
-  check:
-    name: checks lint and build
+  lint:
+    name: checks lint
     runs-on: ubuntu-22.04
     steps: 
-      - name: run lint 
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: run lint on server
         run: |
           cd server
           pnpm run lint
